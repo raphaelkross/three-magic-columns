@@ -37,6 +37,38 @@
   }
 }
 
+body {
+  background: #eee;
+}
+
 *[draggable] {
   cursor: move !important;
+}
+
+.layout {
+  background: #fff;
+  margin: 20px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;;
+  min-height: 200px;
+}
+
+.column {
+  display: flex;
+}
+
+.container {
+  height: 100%;
+}
+
+.container .column {
+  display: inline-flex;
+  width: 50%;
+  height: 100%;
+  align-items: center;
+}
+
+p {
+  margin: 0;
+  width: 100%;
 }
