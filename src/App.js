@@ -14,7 +14,7 @@ const App = () => {
     <div className="layout">
       <Editor> 
           <Column>
-            <p>Rafael Angeline</p>
+            <Text text={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut dui sit amet dolor molestie rutrum vitae in massa."} />
           </Column>
           <Frame>
             <Canvas is={Container} background="#eee">

@@ -61,6 +61,10 @@ body {
   height: 100%;
 }
 
+.container .text {
+  width: 100%;
+}
+
 .container .column {
   display: inline-flex;
   width: 50%;

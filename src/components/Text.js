@@ -1,12 +1,13 @@
 import React from "react";
-import { useNode } from "@craftjs/core";
+import ContentEditable from 'react-contenteditable'
 
-export const Text = ({text, fontSize}) => {
-  const { connectors: {connect, drag} } = useNode();
-
+export const Text = ({text}) => {
   return (
-      <div ref={ref => connect(drag(ref))}>
-         <p style={{fontSize}}>{text}</p>
+      <div className="text">
+        <ContentEditable
+          html={text}
+          tagName="p"
+        />
       </div>
   )
 }
