@@ -1,24 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
+
 import './App.css';
 
-function App() {
+import { Container } from './components/Container';
+import { Button } from './components/Button';
+import { Text } from './components/Text';
+
+import {Editor, Frame, Canvas} from "@craftjs/core";
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{margin: "0 auto", width: "800px"}}>
+      <Editor resolver={{Button, Text, Container}}> 
+        <Frame>
+          <Canvas is={Container} padding={5} background="#eee">
+            <Text text="Rafael" />
+            <Text text="Angeline" />
+            <Button>Drag me</Button>
+            <h2>OOOOO</h2>
+            <h2>OOOOO</h2>
+          </Canvas>
+        </Frame>
+      </Editor>
     </div>
   );
 }
