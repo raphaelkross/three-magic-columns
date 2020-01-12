@@ -5,6 +5,7 @@ import './App.css';
 import { Container } from './components/Container';
 import { Image } from './components/Image';
 import { Text } from './components/Text';
+import { Instagram } from './components/Instagram';
 import { Column, ColumnDraggable, ColumnDraggable2 } from './components/Columns';
 import { SaveState } from './components/SaveState';
 
@@ -23,11 +24,11 @@ const App = () => {
       <Column>
         <Text text={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut dui sit amet dolor molestie rutrum vitae in massa."} />
       </Column>
-      <Editor resolver={{ColumnDraggable, ColumnDraggable2, Image, Container, SaveState}}>
+      <Editor resolver={{ColumnDraggable, ColumnDraggable2, Image, Container, Instagram, SaveState}}>
           <Frame json={json}>
             <Canvas is={Container} background="#eee">
               <Image />
-              <ColumnDraggable2 background="blue" key="col-blue" />
+              <Instagram url="https://www.instagram.com/p/BVU4TFlg-jE/" />
             </Canvas>
         </Frame>
         <SaveState />
