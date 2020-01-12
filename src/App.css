@@ -84,17 +84,18 @@ p {
 }
 
 .image {
-  background: #fff;
+  background: #ddd;
 }
 
 .column img {
   max-width: 100%;
   width: 320px;
-  height: auto;
+  height: 320px;
+  border-radius: 100%;
 }
 
 .instagram {
-  background: #ddd;
+  background: #aaa;
 }
 
 .column-simple {
