@@ -10,7 +10,7 @@ const Instagram = ({ url }) => {
     <div className="column column-draggable instagram" ref={(ref) => connect(drag(ref))}>
       <InstagramEmbed
         url={url}
-        maxWidth={320}
+        maxWidth={240}
         hideCaption
       />
     </div>
