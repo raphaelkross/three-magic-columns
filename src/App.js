@@ -1,31 +1,36 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import './App.css';
 
 import { Container } from './components/Container';
 import { Button } from './components/Button';
 import { Text } from './components/Text';
-import { Column, ColumnDraggable } from './components/Columns';
+import { Column, ColumnDraggable, ColumnDraggable2 } from './components/Columns';
+import { SaveState } from './components/SaveState';
 
 import {Editor, Frame, Canvas} from "@craftjs/core";
 
+import lz from "lzutf8";
+
 const App = () => {
+
+  const stateToLoad = localStorage.getItem('three-cols-editor');
+  const decodedJson = lz.decompress(lz.decodeBase64(stateToLoad));
+  const [json] = useState( decodedJson );
+
   return (
     <div className="layout">
-      <Editor> 
-          <Column>
-            <Text text={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut dui sit amet dolor molestie rutrum vitae in massa."} />
-          </Column>
-          <Frame>
+      <Column>
+        <Text text={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut dui sit amet dolor molestie rutrum vitae in massa."} />
+      </Column>
+      <Editor resolver={{ColumnDraggable, ColumnDraggable2, Container, SaveState}}>
+          <Frame json={json}>
             <Canvas is={Container} background="#eee">
-              <ColumnDraggable background="red">
-                <p>Rafael Angeline</p>
-              </ColumnDraggable>
-              <ColumnDraggable background="blue">
-                <Button>Drag me</Button>
-              </ColumnDraggable>
+              <ColumnDraggable background="red" key="col-red" />
+              <ColumnDraggable2 background="blue" key="col-blue" />
             </Canvas>
         </Frame>
+        <SaveState />
       </Editor>
     </div>
   );
