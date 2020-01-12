@@ -1,0 +1,10 @@
+{
+  "extends": ["airbnb", "airbnb/hooks"],
+  "rules": {
+		"linebreak-style": ["error", "unix"],
+		"quotes": ["error", "double"],
+		"semi": ["error", "always"],
+		"react/jsx-filename-extension": "off",
+		"import/prefer-default-export": "off"
+	}
+}

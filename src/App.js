@@ -1,40 +1,39 @@
-import React, { useState, useEffect } from 'react';
-
-import './App.css';
-
-import { Container } from './components/Container';
-import { Image } from './components/Image';
-import { Text } from './components/Text';
-import { Instagram } from './components/Instagram';
-import { Column, ColumnDraggable, ColumnDraggable2 } from './components/Columns';
-import { SaveState } from './components/SaveState';
-
-import {Editor, Frame, Canvas} from "@craftjs/core";
-
+import React, { useState } from "react";
 import lz from "lzutf8";
+import { Editor, Frame, Canvas } from "@craftjs/core";
+
+import Container from "./components/Container";
+import { Image } from "./components/Image";
+import { Text } from "./components/Text";
+import Instagram from "./components/Instagram";
+import Column from "./components/Column";
+
+import { SaveState } from "./components/SaveState";
+
+import "./App.css";
 
 const App = () => {
-
-  const stateToLoad = localStorage.getItem('three-cols-editor');
+  // eslint-disable-next-line no-undef
+  const stateToLoad = localStorage.getItem("three-cols-editor");
   const decodedJson = lz.decompress(lz.decodeBase64(stateToLoad));
-  const [json] = useState( decodedJson );
+  const [json] = useState(decodedJson);
 
   return (
     <div className="layout">
       <Column>
         <Text />
       </Column>
-      <Editor resolver={{ColumnDraggable, ColumnDraggable2, Image, Container, Instagram, SaveState}}>
-          <Frame json={json}>
-            <Canvas is={Container} background="#eee">
-              <Image />
-              <Instagram url="https://www.instagram.com/p/BVU4TFlg-jE/" />
-            </Canvas>
+      <Editor resolver={{ Image, Container, Instagram }}>
+        <Frame json={json}>
+          <Canvas is={Container}>
+            <Image />
+            <Instagram url="https://www.instagram.com/p/BVU4TFlg-jE/" />
+          </Canvas>
         </Frame>
         <SaveState />
       </Editor>
     </div>
   );
-}
+};
 
 export default App;

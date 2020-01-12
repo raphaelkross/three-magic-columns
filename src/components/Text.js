@@ -1,5 +1,5 @@
 import React from "react";
-import ContentEditable from 'react-contenteditable'
+import ContentEditable from "react-contenteditable";
 
 export const Text = () => {
   const text = `
@@ -13,13 +13,13 @@ export const Text = () => {
   `;
 
   return (
-      <div className="text">
-        <ContentEditable
-          html={text}
-          tagName="p"
-        />
-      </div>
-  )
-}
+    <div className="text">
+      <ContentEditable
+        html={text}
+        tagName="p"
+      />
+    </div>
+  );
+};
 
 export default Text;

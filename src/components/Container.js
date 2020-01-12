@@ -1,13 +1,25 @@
-import React  from "react";
+import React from "react";
 import { useNode } from "@craftjs/core";
+import PropTypes from "prop-types";
 
-export const Container = ({background, padding = 0, children}) => {
-    const { connectors: {connect, drag} } = useNode();
-    return (
-      <div className="container" ref={ref => connect(drag(ref))} style={{background}}>
-        {children}
-      </div>
-    )
-}
+const Container = ({ children }) => {
+  const { connectors: { connect, drag } } = useNode();
+  return (
+    <div className="container" ref={(ref) => connect(drag(ref))}>
+      {children}
+    </div>
+  );
+};
+
+Container.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]),
+};
+
+Container.defaultProps = {
+  children: [],
+};
 
 export default Container;
