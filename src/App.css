@@ -92,3 +92,13 @@ p {
   width: 320px;
   height: auto;
 }
+
+.instagram {
+  background: #ddd;
+}
+
+.column-simple {
+  background: #eee;
+  color: #333;
+  font-size: 16px;
+}

@@ -3,7 +3,7 @@ import { useNode } from "@craftjs/core";
 
 export const Column = ({children}) => {
     return (
-        <div className="column">
+        <div className="column column-simple">
             { children }
         </div>
     );

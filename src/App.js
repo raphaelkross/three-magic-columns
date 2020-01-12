@@ -22,7 +22,7 @@ const App = () => {
   return (
     <div className="layout">
       <Column>
-        <Text text={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut dui sit amet dolor molestie rutrum vitae in massa."} />
+        <Text />
       </Column>
       <Editor resolver={{ColumnDraggable, ColumnDraggable2, Image, Container, Instagram, SaveState}}>
           <Frame json={json}>
