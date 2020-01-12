@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 
 import { Container } from './components/Container';
-import { Button } from './components/Button';
+import { Image } from './components/Image';
 import { Text } from './components/Text';
 import { Column, ColumnDraggable, ColumnDraggable2 } from './components/Columns';
 import { SaveState } from './components/SaveState';
@@ -23,10 +23,10 @@ const App = () => {
       <Column>
         <Text text={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut dui sit amet dolor molestie rutrum vitae in massa."} />
       </Column>
-      <Editor resolver={{ColumnDraggable, ColumnDraggable2, Container, SaveState}}>
+      <Editor resolver={{ColumnDraggable, ColumnDraggable2, Image, Container, SaveState}}>
           <Frame json={json}>
             <Canvas is={Container} background="#eee">
-              <ColumnDraggable background="red" key="col-red" />
+              <Image />
               <ColumnDraggable2 background="blue" key="col-blue" />
             </Canvas>
         </Frame>

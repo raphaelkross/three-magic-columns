@@ -4,7 +4,7 @@ import { useEditor } from "@craftjs/core";
 import lz from "lzutf8";
 
 export const SaveState = () => {
-    const { actions, query, draggedNodeId } = useEditor((state) => ({
+    const { query, draggedNodeId } = useEditor((state) => ({
         draggedNodeId: state.events.dragged,
     }));
 
